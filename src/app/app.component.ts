@@ -46,10 +46,7 @@ export class AppComponent implements OnInit {
       }
     });
 
-    // this.store.subscribe((state) => console.log("store value:", state));
-    // this.isLoggedIn$ = this.store.pipe(select((state) => !!state["auth"].user));
     this.isLoggedIn$ = this.store.pipe(select(isLoggedIn));
-    // this.isLoggedOut$ = this.store.pipe(select((state) => !state["auth"].user));
     this.isLoggedOut$ = this.store.pipe(select(isLoggedOut));
   }
 
