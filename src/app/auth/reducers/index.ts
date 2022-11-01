@@ -23,6 +23,10 @@ export const initialAuthState: AuthState = {
 export const authReducer = createReducer(
   initialAuthState,
   on(AuthActions.login, (state, action) => {
+    // this will trigger runtime error
+    // state.user = action.user;
+    // return state;
+
     return {
       user: action.user,
     };
