@@ -2,7 +2,7 @@ import { state } from "@angular/animations";
 import { createEntityAdapter, EntityState } from "@ngrx/entity";
 import { createReducer, on } from "@ngrx/store";
 import { CourseActions } from "../action-types";
-import { Course } from "../model/course";
+import { compareCourses, Course } from "../model/course";
 
 export interface CoursesState extends EntityState<Course> {
   // old ways
@@ -11,7 +11,11 @@ export interface CoursesState extends EntityState<Course> {
   // ids: number[];
 }
 
-export const adapter = createEntityAdapter<Course>();
+export const adapter = createEntityAdapter<Course>({
+  sortComparer: compareCourses,
+  // use selectId for situational purposes ex.
+  // selectId: course => course.customId
+});
 
 export const initialCoursesState = adapter.getInitialState();
 
