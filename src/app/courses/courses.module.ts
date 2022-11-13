@@ -52,7 +52,8 @@ export const coursesRoutes: Routes = [
 
 const entityMetadata: EntityMetadataMap = {
   Course: {
-    //
+    // sort courses data
+    sortComparer: compareCourses,
   },
 };
 
