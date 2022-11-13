@@ -54,6 +54,10 @@ const entityMetadata: EntityMetadataMap = {
   Course: {
     // sort courses data
     sortComparer: compareCourses,
+    //
+    entityDispatcherOptions: {
+      optimisticUpdate: true,
+    },
   },
 };
 
